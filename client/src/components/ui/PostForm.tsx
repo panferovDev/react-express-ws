@@ -1,10 +1,11 @@
 import React from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-import AddPostHook from '../hooks/AddPostHook';
+import usePosts from '../hooks/usePosts';
+
 
 export default function PostForm(): JSX.Element {
-  const { submitPostHandler } = AddPostHook();
+  const { submitPostHandler } = usePosts();
   return (
     <Form onSubmit={submitPostHandler} className="mt-1">
       <Form.Group className="mb-3" controlId="formBasicEmail">

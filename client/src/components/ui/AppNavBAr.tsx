@@ -5,7 +5,7 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import { NavLink } from 'react-router-dom';
 import { useAppSelector } from '../../features/redux/store';
-import AuthHook from '../hooks/AuthHook';
+import AuthHook from '../hooks/useAuthForm';
 
 export default function AppNavBAr(): JSX.Element {
   const user = useAppSelector((state) => state.user.data);

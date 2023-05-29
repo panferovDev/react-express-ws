@@ -1,10 +1,10 @@
 import React from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-import AuthHook from '../hooks/AuthHook';
+import useAuthForm from '../hooks/useAuthForm';
 
 export default function SignInForm(): JSX.Element {
-  const { submitHandlerSignIn } = AuthHook();
+  const { submitHandlerSignIn } = useAuthForm();
 
   return (
     <Form onSubmit={submitHandlerSignIn} className="mt-5">

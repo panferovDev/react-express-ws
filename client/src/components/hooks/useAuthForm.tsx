@@ -3,7 +3,7 @@ import type { SignInFormType, SignUpFormType } from '../../types';
 import { useAppDispatch } from '../../features/redux/store';
 import { signUpUser, signInUser, logoutUser } from '../../features/redux/thunkActions/userThunks';
 
-export default function AuthHook() {
+export default function useAuthForm() {
   const dispatch = useAppDispatch();
 
   const submitHandlerSignIn = (e: React.FormEvent<HTMLFormElement>): void => {

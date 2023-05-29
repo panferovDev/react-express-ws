@@ -8,7 +8,7 @@ type PostForm = {
   body: HTMLInputElement;
 };
 
-export default function AddPostHook(): {
+export default function usePosts(): {
   submitPostHandler: (e: React.FormEvent<HTMLFormElement & PostForm>) => void;
   handleError: (e: React.SyntheticEvent<HTMLImageElement, Event>) => void;
   deleletePostHandler: (id: number) => void;

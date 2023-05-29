@@ -3,7 +3,7 @@ import Card from 'react-bootstrap/Card';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
 import type { PostType } from '../../types/postTypes';
-import AddPostHook from '../hooks/AddPostHook';
+import usePosts from '../hooks/usePosts';
 import Stack from 'react-bootstrap/Stack';
 import { useAppSelector } from '../../features/redux/store';
 
@@ -12,7 +12,7 @@ type Props = {
 };
 
 function PostCard({ post }: Props) {
-  const { handleError, deleletePostHandler } = AddPostHook();
+  const { handleError, deleletePostHandler } = usePosts();
   const user = useAppSelector((state) => state.user.data);
 
   return (

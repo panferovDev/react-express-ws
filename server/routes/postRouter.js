@@ -1,5 +1,6 @@
 const { User, Post } = require("../db/models");
 const upload = require("../utils/multerSettings");
+const isAuth = require("../middlewares")
 const fs = require("fs").promises;
 
 const postRouter = require("express").Router();
@@ -37,9 +38,14 @@ postRouter
     }
   });
 
-postRouter.route("/:id").delete(async (req, res) => {
+postRouter.route("/:id").delete(isAuth, async (req, res) => {
   try {
-    const post = await Post.findByPk(req.params.id);
+    const post = await Post.findOne({
+      where: {
+        id: req.params.id,
+        user_id: req.session.user.id,
+      },
+    })
 
     fs.unlink(`./public/img/${post.pic}`)
     .catch((e) => console.log(e));

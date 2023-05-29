@@ -1,11 +1,10 @@
 import React from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-import AuthHook from '../hooks/AuthHook';
+import useAuthForm from '../hooks/useAuthForm';
 
 export default function SignUpForm(): JSX.Element {
-  
-  const { submitHandlerSignUp } = AuthHook();
+  const { submitHandlerSignUp } = useAuthForm();
 
   return (
     <Form onSubmit={submitHandlerSignUp} className="mt-5">
